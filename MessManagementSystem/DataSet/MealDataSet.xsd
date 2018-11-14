@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MealDataSet" targetNamespace="http://tempuri.org/MealDataSet.xsd" xmlns:mstns="http://tempuri.org/MealDataSet.xsd" xmlns="http://tempuri.org/MealDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MealDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MealDataSet" msprop:Generator_UserDSName="MealDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MealDataTable" msprop:Generator_TableClassName="MealDataTableDataTable" msprop:Generator_TableVarName="tableMealDataTable" msprop:Generator_TablePropName="MealDataTable" msprop:Generator_RowDeletingName="MealDataTableRowDeleting" msprop:Generator_RowChangingName="MealDataTableRowChanging" msprop:Generator_RowEvHandlerName="MealDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="MealDataTableRowDeleted" msprop:Generator_UserTableName="MealDataTable" msprop:Generator_RowChangedName="MealDataTableRowChanged" msprop:Generator_RowEvArgName="MealDataTableRowChangeEvent" msprop:Generator_RowClassName="MealDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SNo" msprop:Generator_ColumnVarNameInTable="columnSNo" msprop:Generator_ColumnPropNameInRow="SNo" msprop:Generator_ColumnPropNameInTable="SNoColumn" msprop:Generator_UserColumnName="SNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalMeal" msprop:Generator_ColumnVarNameInTable="columnTotalMeal" msprop:Generator_ColumnPropNameInRow="TotalMeal" msprop:Generator_ColumnPropNameInTable="TotalMealColumn" msprop:Generator_UserColumnName="TotalMeal" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

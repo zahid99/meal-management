@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A07B353B-F272-40EA-B019-79B0016131C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessManagementSystem</RootNamespace>
+    <AssemblyName>MessManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet\DepositDataSet.cs">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DepositDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MealDataSet.cs">
+      <DependentUpon>MealDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\MealDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MealDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\ShopingDataSet.cs">
+      <DependentUpon>ShopingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\ShopingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Gateway\DepositGateway.cs" />
+    <Compile Include="Gateway\MealGateway.cs" />
+    <Compile Include="Gateway\MemberGateway.cs" />
+    <Compile Include="Gateway\ShopingGateway.cs" />
+    <Compile Include="GetMealDataset.cs">
+      <DependentUpon>GetMealDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GetMealDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetMealDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\DepositManager.cs" />
+    <Compile Include="Manager\MealManager.cs" />
+    <Compile Include="Manager\MemberManager.cs" />
+    <Compile Include="Manager\ShopingManager.cs" />
+    <Compile Include="MealCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MealCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\DepositAmount.cs" />
+    <Compile Include="Model\HelperClass.cs" />
+    <Compile Include="Model\MemberWithDeposit.cs" />
+    <Compile Include="Model\MemberWithMeal.cs" />
+    <Compile Include="Model\MemberWithShoping.cs" />
+    <Compile Include="UI\AboutUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AboutUI.Designer.cs">
+      <DependentUpon>AboutUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrystalReport.Designer.cs">
+      <DependentUpon>CrystalReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DashboardUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DashboardUI.Designer.cs">
+      <DependentUpon>DashboardUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DepositCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepositCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DepositCrystalReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DepositCrystalReportUI.Designer.cs">
+      <DependentUpon>DepositCrystalReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DepositReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DepositReportUI.Designer.cs">
+      <DependentUpon>DepositReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DepositUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DepositUI.Designer.cs">
+      <DependentUpon>DepositUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginUI.Designer.cs">
+      <DependentUpon>LoginUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Meal.cs" />
+    <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\ShopingModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\MealReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MealReportUI.Designer.cs">
+      <DependentUpon>MealReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MealUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MealUI.Designer.cs">
+      <DependentUpon>MealUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MealViewUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MealViewUI.Designer.cs">
+      <DependentUpon>MealViewUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MemberUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MemberUI.Designer.cs">
+      <DependentUpon>MemberUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShopingCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopingCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ShopingReportCrystalReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ShopingReportCrystalReportUI.Designer.cs">
+      <DependentUpon>ShopingReportCrystalReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShopingReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ShopingReportUI.Designer.cs">
+      <DependentUpon>ShopingReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShopingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ShopingUI.Designer.cs">
+      <DependentUpon>ShopingUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MealCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MealCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report\DailyShopingReport.rdlc" />
+    <EmbeddedResource Include="Report\MealReport.rdlc" />
+    <EmbeddedResource Include="UI\AboutUI.resx">
+      <DependentUpon>AboutUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrystalReport.resx">
+      <DependentUpon>CrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DashboardUI.resx">
+      <DependentUpon>DashboardUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DepositCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DepositCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DepositCrystalReportUI.resx">
+      <DependentUpon>DepositCrystalReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DepositReportUI.resx">
+      <DependentUpon>DepositReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DepositUI.resx">
+      <DependentUpon>DepositUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginUI.resx">
+      <DependentUpon>LoginUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MealReportUI.resx">
+      <DependentUpon>MealReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MealUI.resx">
+      <DependentUpon>MealUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MealViewUI.resx">
+      <DependentUpon>MealViewUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MemberUI.resx">
+      <DependentUpon>MemberUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShopingCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShopingCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShopingReportCrystalReportUI.resx">
+      <DependentUpon>ShopingReportCrystalReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShopingReportUI.resx">
+      <DependentUpon>ShopingReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShopingUI.resx">
+      <DependentUpon>ShopingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet\DepositDataSet.xsc">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DepositDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepositDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DepositDataSet.xss">
+      <DependentUpon>DepositDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MealDataSet.xsc">
+      <DependentUpon>MealDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\MealDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MealDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\MealDataSet.xss">
+      <DependentUpon>MealDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\ShopingDataSet.xsc">
+      <DependentUpon>ShopingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\ShopingDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShopingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\ShopingDataSet.xss">
+      <DependentUpon>ShopingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GetMealDataset.xsc">
+      <DependentUpon>GetMealDataset.xsd</DependentUpon>
+    </None>
+    <None Include="GetMealDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetMealDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GetMealDataset.xss">
+      <DependentUpon>GetMealDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
